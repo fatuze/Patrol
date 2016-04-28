@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.fatuze.fanran.ReportActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="false"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_site"
+                android:id="@+id/textView4"
+                android:textStyle="bold"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textSize="20sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/site_unknown"
+                android:id="@+id/report_site_name"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:enabled="true"
+                android:editable="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_weight="0.2"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/text_state"
+                android:id="@+id/textView"
+                android:enabled="false"
+                android:textColor="@android:color/black"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textSize="20sp"
+                android:contextClickable="false"
+                android:clickable="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/state_normal"
+                android:id="@+id/checkBox1"
+                android:checked="true"
+                android:layout_weight="1"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/state_abnormal"
+                android:id="@+id/checkBox2"
+                android:checked="false"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/text_remarks"
+            android:id="@+id/textView3"
+            android:layout_weight="0.06"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/remarkText"
+            android:layout_weight="0.2"
+            android:background="@android:drawable/edit_text"
+            android:lines="3"
+            android:longClickable="false"
+            android:scrollbars="vertical"
+            android:maxLines="3"
+            android:maxLength="80" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/text_capture_picture"
+            android:id="@+id/textView2"
+            android:layout_weight="0.08"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageView"
+                android:src="@android:drawable/gallery_thumb"
+                android:background="#ff000000"
+                android:baselineAlignBottom="true"
+                android:clickable="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DeleteButton"
+                android:src="@android:drawable/ic_delete"
+                android:contentDescription=""
+                android:cropToPadding="false"
+                android:clickable="true"
+                android:baselineAlignBottom="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_report_upload"
+                android:id="@+id/button_upload"
+                android:clickable="true"
+                android:textStyle="bold"
+                android:textColor="#ff000000"
+                android:background="#c8e2f2"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_report_save"
+                android:id="@+id/button_save"
+                android:clickable="true"
+                android:textStyle="bold"
+                android:textColor="#ff000000"
+                android:background="#c8e2f2"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
