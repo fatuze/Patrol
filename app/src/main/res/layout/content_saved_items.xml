@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="#eaeaea">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="铜牛"
+        android:id="@+id/text_site_name"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 正常 "
+        android:id="@+id/text_status"
+        android:textColor="#386f3b"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/text_site_name"
+        android:layout_marginTop="4dp"
+        android:padding="2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2016-5-6 10:45"
+        android:id="@+id/text_datetime"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uploadButton"
+        android:layout_centerVertical="true"
+        android:text="上传"
+        android:background="#c82c43ef"
+        android:layout_toLeftOf="@+id/deleteButton"
+        android:layout_marginRight="6dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除"
+        android:id="@+id/deleteButton"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="#c8e30101" />
+</RelativeLayout>

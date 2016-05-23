@@ -112,8 +112,20 @@ public class MainActivity extends Activity implements OnClickListener {
 		defaultBaiduMapScaleUnit.setPadding(100, 0, 115, 200);//最后设置调整百度地图的默认单位刻度View的位置
 	}
 	private void changeInitializeScaleView() {
-		myBaiduMap=mapView.getMap();//改变百度地图的放大比例,让首次加载地图就开始扩大到500米的距离
-		MapStatusUpdate factory=MapStatusUpdateFactory.zoomTo(15.0f);
+		myBaiduMap = mapView.getMap();//改变百度地图的放大比例,让首次加载地图就开始扩大到500米的距离
+        myBaiduMap.setOnMapClickListener(new BaiduMap.OnMapClickListener() {
+            public void onMapClick(LatLng point) {
+                //在此处理点击事件
+                Log.d(LOG_TAG, "onMapClick()");
+                myBaiduMap.hideInfoWindow(); //隐藏Marker
+            }
+            public boolean onMapPoiClick(MapPoi poi) {
+                //在此处理底图标注点击事件
+                Log.d(LOG_TAG, "onMapPoiClick()");
+                return false;
+            }
+        });
+        MapStatusUpdate factory=MapStatusUpdateFactory.zoomTo(15.0f);
 		myBaiduMap.animateMapStatus(factory);		
 	}
 
@@ -250,7 +262,13 @@ public class MainActivity extends Activity implements OnClickListener {
     //点击事件相关
 	@Override
 	public void onClick(View v) {
+        Log.d(LOG_TAG, "onClick in");
 		switch (v.getId()) {
+            case R.id.map_view_test: // Map view
+                Log.d(LOG_TAG, "Click map view!");
+                // 隐藏Marker信息
+                myBaiduMap.hideInfoWindow();
+                break;
 			case R.id.add_scale://放大地图比例
 				expandMapScale();
 				break;
@@ -270,6 +288,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				break;
 			case R.id.button_local_result: //本地暂存巡查结果
 				Log.d(LOG_TAG, "button_local_result is clicked!");
+				goToSavedItemActivity();
 				break;
 			default:
 				break;
@@ -308,6 +327,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		intent.setClass(MainActivity.this, ReportActivity.class);
         startActivity(intent);
     }
+
+	private void goToSavedItemActivity() {
+		Intent intent = new Intent();
+		intent.setClass(MainActivity.this, SavedItemsActivity.class);
+		Log.d(LOG_TAG, "goToSavedItemActivity");
+		startActivity(intent);
+	}
+
 	/**
 	 * @author zhongqihong
 	 * 获取位置信息的客户端对象的监听器类MyLocationListener

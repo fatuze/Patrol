@@ -34,4 +34,5 @@
     <string name="ask_if_exit">Do you want to exit?</string>
     <string name="text_confirm">Confirm</string>
     <string name="text_cancel">Cancel</string>
+    <string name="title_activity_saved_items">SavedItemsActivity</string>
 </resources>
